@@ -18,10 +18,7 @@
         <ui:TitleBar Grid.Row="0" MouseDown="TitleBar_MouseDown" />
 
 
-        <Grid Name="Grid" Grid.Column="1" Grid.Row="1">
-
-        </Grid>
-        <Grid Grid.Row="1">
+        <Grid x:Name="MainGrid" Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="auto"/>
                 <ColumnDefinition/>
@@ -31,9 +28,11 @@
                 Grid.Column="1"
                 Background="{DynamicResource ControlFillColorDefaultBrush}"
                 CornerRadius="8,0,0,0" x:Name="Card1">
-                <TabControl  Background="Transparent" BorderBrush="Transparent"  Height="{Binding ElementName=Card1,Path=ActualHeight}" Margin="8 16 0 0" Padding="0"  VerticalAlignment="Stretch" Visibility="Visible" Name="Tabs" >
+                <Grid>
+                    <TabControl  Background="Transparent" BorderBrush="Transparent"  Height="{Binding ElementName=Card1,Path=ActualHeight}" Margin="8 16 0 0" Padding="0"  VerticalAlignment="Stretch" Visibility="Visible" Name="Tabs" >
 
                     </TabControl>
+                </Grid>
             </Border>
             <ui:NavigationStore Name="NavBar" TransitionType="FadeInWithSlide" SelectedPageIndex="2"   Margin="0 0 8 0" Grid.Column="0" Orientation="Vertical">
                 <ui:NavigationStore.Items>
@@ -45,6 +44,10 @@
                     <ui:NavigationItem Activated="NavigationItem_Activated" Click="NavigationItem_Click" Content="Logout" Tag="Logout" IsActive="False"  IconFilled="True" Icon="PersonDelete24"/>
                 </ui:NavigationStore.Items>
             </ui:NavigationStore>
+        </Grid>
+
+        <Grid   Name="LoginGrid" Grid.Column="1" Grid.Row="1">
+
         </Grid>
     </Grid>
 </Window>

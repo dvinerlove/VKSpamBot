@@ -44,7 +44,7 @@ namespace VKBot
         {
             var api = (sender as LoginWindow)!.Api;
 
-            Grid.Children.Clear();
+            LoginGrid.Children.Clear();
 
             ScrollViewer postSettings = new ScrollViewer();
             postSettings.Content = new PostSettingsPage(api);
@@ -69,6 +69,9 @@ namespace VKBot
             Tabs.Items.Add(new TabItem() { Height = 0, Content = groupsSettings, Header = "Groups" });
             Tabs.Items.Add(new TabItem() { Height = 0, Content = publish, Header = "Publish" });
             Tabs.Items.Add(new TabItem() { Height = 0, Content = logout, Header = "Logout" });
+
+            MainGrid.Visibility = Visibility.Visible;
+            LoginGrid.Visibility = Visibility.Collapsed;
         }
 
         private void Logout_Logout(object? sender, EventArgs e)
@@ -78,12 +81,15 @@ namespace VKBot
 
         private void OpenLoginWindow()
         {
+
+            MainGrid.Visibility = Visibility.Collapsed;
+            LoginGrid.Visibility = Visibility.Visible;
             Tabs.Items.Clear();
-            Grid.Children.Clear();
+            LoginGrid.Children.Clear();
             var loginWindow = new LoginWindow();
             loginWindow.Login += LoginWindow_Login;
             loginWindow.Loaded += (s, e) => { loginWindow.Start(); };
-            Grid.Children.Add(loginWindow);
+            LoginGrid.Children.Add(loginWindow);
         }
 
         private void TitleBar_MouseDown(object sender, MouseButtonEventArgs e)

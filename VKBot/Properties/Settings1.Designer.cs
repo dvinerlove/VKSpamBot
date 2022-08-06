@@ -167,9 +167,9 @@ namespace VKBot.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("8232482")]
-        public string ClientID {
+        public ulong ClientID {
             get {
-                return ((string)(this["ClientID"]));
+                return ((ulong)(this["ClientID"]));
             }
             set {
                 this["ClientID"] = value;
