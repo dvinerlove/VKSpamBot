@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="VKBot.PostSettings.VariableItem"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:VKBot.PostSettings" xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+             mc:Ignorable="d"  d:DesignWidth="800">
+    <ui:Card Margin="8">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="64"/>
+            </Grid.ColumnDefinitions>
+            <ui:TextBox Margin="8" PlaceholderText="Variable" Name="Variable" TextChanged="TextBox_TextChanged" Cursor="IBeam"/>
+            <ui:TextBox TextChanged="Text_TextChanged" Grid.Column="1" Margin="8" PlaceholderText="Text" Name="Text" Cursor="IBeam"/>
+            <ui:Button Appearance="Danger" Grid.Column="2" HorizontalAlignment="Stretch" Margin="8" Click="Button_Click">
+                <ui:SymbolIcon Symbol="Delete24" Margin="0" />
+            </ui:Button>
+        </Grid>
+    </ui:Card>
+</UserControl>
